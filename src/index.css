@@ -26,6 +26,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -38,16 +39,16 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.3em .9em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #111111;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #454eff;
 }
 button:focus,
 button:focus-visible {
@@ -63,6 +64,80 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #dbdbdb;
   }
+}
+
+.nav{
+  width: 100vw;
+  height: 45px;
+  border-bottom: 2px solid;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav > a{
+  color: gray;
+}
+
+.nav > a.active{
+  color: skyblue;
+  font-weight: bold;
+}
+
+.vote-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.vote-card {
+  padding: 10px;
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+
+.vote-card:hover{
+  background-color: rgb(145, 99, 99);
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  font-size: small;
+  border-radius: 50%;
+  background-color: #f00;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirme-vote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.candidate-image {
+  width: 200px;
+  height: 200px;
+}
+
+.my-vote {
+  -webkit-box-shadow: -1px -1px 27px 4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px -1px 27px 4px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px -1px 27px 4px rgba(0, 0, 0, 0.75);
 }
