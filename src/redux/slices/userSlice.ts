@@ -12,7 +12,7 @@ const initialState: userState = {
 const fetchLogin = createAsyncThunk("user/login",
     async (user: { username: string, password: string }, thunkAPI) => {
         try {
-            const response = await fetch("http://localhost:2222/api/users/login", {
+            const response = await fetch(`${import.meta.env.BASE_URL || "http://localhost:2222/api"}/api/users/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -34,7 +34,7 @@ const fetchLogin = createAsyncThunk("user/login",
 const fetchRegister = createAsyncThunk("user/register",
     async (user: { username: string, password: string, isAdmin: boolean }, thunkAPI) => {
         try {
-            const response = await fetch("http://localhost:2222/api/users/register", {
+            const response = await fetch(`${import.meta.env.BASE_URL || "http://localhost:2222/api"}/api/users/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -56,7 +56,7 @@ export const fetchProfileUpdate = createAsyncThunk(
   "user/profile",
   async (id: string, thunkApi) => {
     try {
-      const res = await fetch("http://localhost:2222/api/users/profile", {
+      const res = await fetch(`${import.meta.env.BASE_URL || "http://localhost:2222/api"}/api/users/profile`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -103,7 +103,6 @@ const userSlice = createSlice({
       });
   },
 });
-
 
 export { fetchLogin, fetchRegister }
 export default userSlice

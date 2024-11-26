@@ -12,7 +12,7 @@ const initialState: candidateState = {
 export const fetchCandidates = createAsyncThunk("candidates/getList",
     async (_, thunkAPI) => {
         try {
-            const response = await fetch("http://localhost:2222/api/candidates/", {
+            const response = await fetch(`${import.meta.env.BASE_URL || "http://localhost:2222/api"}/api/candidates/`, {
                 headers: {
                     "authorization": localStorage.getItem("token")! 
                 }

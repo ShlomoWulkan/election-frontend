@@ -14,7 +14,7 @@ export default function VoteCard({candidate}: props) {
     const dispatch = useAppDispatch()
 
 const fetchVote = async () => {
-    await fetch('http://localhost:2222/api/votes/', {
+    await fetch(`${import.meta.env.BASE_URL || "http://localhost:2222/api"}/api/votes/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
